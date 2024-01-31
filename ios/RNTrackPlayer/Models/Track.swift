@@ -9,7 +9,7 @@
 import Foundation
 import MediaPlayer
 import AVFoundation
-import SwiftAudioEx
+import SwiftAudioExNotNull
 
 class Track: AudioItem, TimePitching, AssetOptionsProviding {
     let url: MediaURL

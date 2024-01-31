@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import SwiftAudioEx
+import SwiftAudioExNotNull
 
 enum Capability: String {
     case play, pause, togglePlayPause, stop, next, previous, jumpForward, jumpBackward, seek, like, dislike, bookmark
