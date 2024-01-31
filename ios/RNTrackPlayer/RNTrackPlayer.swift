@@ -8,7 +8,7 @@
 
 import Foundation
 import MediaPlayer
-import SwiftAudioEx
+import SwiftAuidoExNotNull
 
 @objc(RNTrackPlayer)
 public class RNTrackPlayer: RCTEventEmitter, AudioSessionControllerDelegate {
@@ -587,7 +587,7 @@ public class RNTrackPlayer: RCTEventEmitter, AudioSessionControllerDelegate {
     public func setRepeatMode(repeatMode: NSNumber, resolve: RCTPromiseResolveBlock, reject: RCTPromiseRejectBlock) {
         if (rejectWhenNotInitialized(reject: reject)) { return }
 
-        player.repeatMode = SwiftAudioEx.RepeatMode(rawValue: repeatMode.intValue) ?? .off
+        player.repeatMode = SwiftAuidoExNotNull.RepeatMode(rawValue: repeatMode.intValue) ?? .off
         resolve(NSNull())
     }
 
@@ -827,7 +827,7 @@ public class RNTrackPlayer: RCTEventEmitter, AudioSessionControllerDelegate {
         let metadataItems = MetadataAdapter.convertToGroupedMetadata(metadataGroups: metadata);
         emit(event: EventType.MetadataTimedReceived, body: ["metadata": metadataItems])
         
-        // SwiftAudioEx was updated to return the array of timed metadata
+        // SwiftAuidoExNotNull was updated to return the array of timed metadata
         // Until we have support for that in RNTP, we take the first item to keep existing behaviour.
         let metadata = metadata.first?.items ?? []
         let metadataItem = MetadataAdapter.legacyConversion(metadata: metadata)
