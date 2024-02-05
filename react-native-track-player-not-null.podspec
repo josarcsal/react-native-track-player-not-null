@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.summary = package["description"]
   s.license = package["license"]
 
-  s.author = "David Chavez"
+  s.author = "Jose Arciniega"
   s.homepage = package["repository"]["url"]
   s.platform = :ios, "11.0"
 
